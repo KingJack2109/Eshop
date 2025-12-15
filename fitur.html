@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitur – Kazzah Shop Digital</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0f14;
+  --card:#121820;
+  --text:#e8f0f7;
+  --muted:#9aa4b2;
+  --accent:#19e0d6;
+}
+.light{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --accent:#06b6d4;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:var(--bg);color:var(--text);transition:.3s}
+
+/* HEADER */
+header{
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(12px);
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:500}
+.logo span{
+  background:var(--accent);
+  color:#000;
+  border-radius:8px;
+  padding:6px 10px;
+  font-size:12px;
+}
+nav{display:flex;gap:18px;align-items:center}
+.toggle,.menu-btn{cursor:pointer;font-size:20px}
+
+/* HERO */
+.hero{
+  padding:100px 26px 70px;
+  text-align:center;
+}
+.hero h1{
+  font-size:46px;
+  font-weight:600;
+}
+.hero h1 span{color:var(--accent)}
+.hero p{
+  color:var(--muted);
+  margin-top:18px;
+  max-width:620px;
+  margin-inline:auto;
+  font-size:16px;
+}
+
+/* FEATURES */
+section{padding:80px 26px}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+  max-width:1100px;
+  margin:auto;
+}
+.feature-card{
+  background:var(--card);
+  padding:30px;
+  border-radius:22px;
+  transition:.35s;
+}
+.feature-card:hover{
+  transform:translateY(-8px);
+}
+.feature-icon{
+  font-size:32px;
+  margin-bottom:16px;
+}
+.feature-card h3{
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+.feature-card p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* FOOTER */
+.footer{
+  padding:90px 26px 70px;
+}
+.footer h2{
+  font-size:42px;
+  font-weight:600;
+  margin-bottom:28px;
+}
+.footer span{color:var(--accent)}
+.footer-info{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.8;
+  max-width:520px;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.7s;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+
+/* MENU */
+.menu{
+  position:fixed;
+  inset:0 0 0 auto;
+  width:75%;
+  max-width:320px;
+  height:100vh;
+  background:linear-gradient(180deg,#0b0f14,#020409);
+  padding:80px 26px;
+  z-index:30;
+  transform:translateX(100%);
+  transition:.35s;
+}
+.menu.active{transform:translateX(0)}
+.menu a{
+  display:block;
+  color:#cfd8e3;
+  font-size:19px;
+  margin-bottom:22px;
+  text-decoration:none;
+}
+.menu a:hover{color:var(--accent)}
+.menu-close{
+  position:absolute;
+  top:22px;
+  right:22px;
+  font-size:22px;
+  cursor:pointer;
+}
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:25;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+}
+.overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+  <div class="menu-close" onclick="toggleMenu()">✕</div>
+  <a href="index.html">Beranda</a>
+  <a href="fitur.html">Fitur</a>
+  <a href="harga.html">Harga</a>
+  <a href="teknologi.html">Teknologi</a>
+  <a href="team.html">Team</a>
+  <a href="dokumentasi.html">Dokumentasi</a>
+  <a href="kontak.html">Kontak</a>
+</div>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<header>
+  <div class="logo"><span>KD</span> Kazzah E-Shop Digital</div>
+  <nav>
+    <div class="toggle" id="themeToggle" onclick="toggleMode()">🌙</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
+
+<div class="hero fade">
+  <h1>Fitur Advanced <span>E-Shop Digital Super</span></span></h1>
+  <p>Semua fitur dirancang untuk menunjang automasi bisnis digital secara profesional, aman, dan stabil. Serta memudahkan anda untuk bertranksasi 24 jam. Fitur ini telah di lengkapi dengan 228 Command fitur yang work it. Dengan fitur payment gateway yang berfung sesuai dengan API yang di atur.</p>
+</div>
+
+<section>
+  <div class="features fade">
+
+    <div class="feature-card">
+      <div class="feature-icon">⚙️</div>
+      <h3>Auto Order System</h3>
+      <p>Sistem pemesanan otomatis 24/7 tanpa admin. Semua order diproses cepat dan rapi.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>Multi Platform Integration</h3>
+      <p>Mendukung <b>WhatsApp Business API</b>, <b>WhatsApp Regular</b>, <b>Telegram Bot</b>, serta <b>Payment Gateway</b> untuk transaksi otomatis end-to-end.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">👥</div>
+      <h3>Group Feature Support</h3>
+      <p>Bot dapat digunakan di <b>group WhatsApp & Telegram</b>. Cocok untuk komunitas, reseller, dan tim. Mendukung respon otomatis grup, kontrol penggunaan, dan menjaga keteraturan agar tidak spam.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🔐</div>
+      <h3>Keamanan Script</h3>
+      <p>Tersedia versi Encrypt & No Encrypt. Script aman, stabil, dan siap digunakan sesuai kebutuhan.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Fast & Lightweight</h3>
+      <p>Performa ringan dan respons cepat, cocok dijalankan di VPS, panel, maupun server lokal.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📞</div>
+      <h3>On 7/24 Jam</h3>
+      <p>Sistem dan layanan berjalan nonstop 24 jam setiap hari tanpa downtime.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="footer fade">
+  <h2>Kazzah <span>Shop Digital</span></h2>
+  <div class="footer-info">
+    <div>Contact WhatsApp : <b>6281377190055</b></div>
+    <div>Contact Telegram : <b>@KazzahOfficial</b></div>
+    <div>Location : <b>Indonesia, Sumatera Selatan, Palembang</b></div>
+  </div>
+</section>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle('light');
+  themeToggle.textContent =
+    document.body.classList.contains('light') ? '☀️' : '🌙';
+}
+function toggleMenu(){
+  menu.classList.toggle('active');
+  overlay.classList.toggle('active');
+}
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting)x.target.classList.add('show');
+    else x.target.classList.remove('show');
+  })
+},{threshold:.15});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
