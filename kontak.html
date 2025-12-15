@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontak & Support - Kazzah Shop Digital</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0f14;
+  --card:#121820;
+  --text:#e8f0f7;
+  --muted:#9aa4b2;
+  --accent:#19e0d6;
+}
+.light{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --accent:#06b6d4;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:var(--bg);color:var(--text);transition:.3s}
+
+/* HEADER */
+header{
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(12px);
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:500}
+.logo span{
+  background:var(--accent);
+  color:#000;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:12px;
+}
+nav{display:flex;gap:18px;align-items:center}
+.toggle,.menu-btn{cursor:pointer;font-size:20px}
+
+/* MENU */
+.menu{
+  position:fixed;
+  inset:0 0 0 auto;
+  width:75%;
+  max-width:320px;
+  height:100vh;
+  background:linear-gradient(180deg,#0b0f14,#020409);
+  padding:80px 26px;
+  z-index:40;
+  transform:translateX(100%);
+  transition:.35s ease;
+}
+.menu.active{transform:translateX(0)}
+.menu a{
+  display:block;
+  color:#cfd8e3;
+  font-size:19px;
+  margin-bottom:22px;
+  text-decoration:none;
+}
+.menu a:hover{color:var(--accent)}
+.menu-close{
+  position:absolute;
+  top:22px;
+  right:22px;
+  font-size:22px;
+  cursor:pointer;
+}
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:30;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+}
+.overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* CONTENT */
+.main{
+  padding:90px 24px 40px;
+  max-width:520px;
+  margin:auto;
+  text-align:center;
+}
+.icon{
+  font-size:54px;
+  color:var(--accent);
+  margin-bottom:18px;
+}
+.main h1{
+  font-size:34px;
+  font-weight:600;
+  margin-bottom:16px;
+}
+.main p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* CARDS */
+.cards{
+  margin-top:40px;
+  display:grid;
+  gap:22px;
+}
+.card{
+  background:linear-gradient(180deg,#0f1722,#0b0f14);
+  border-radius:20px;
+  padding:26px;
+  text-decoration:none;
+  color:var(--text);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+.card span{
+  font-size:36px;
+  display:block;
+  margin-bottom:12px;
+}
+.card h3{font-size:20px;margin-bottom:6px}
+.card p{font-size:14px;color:var(--muted)}
+.card:hover{transform:translateY(-4px);transition:.3s}
+
+/* FOOTER */
+.footer{
+  padding:70px 24px 30px;
+  text-align:center;
+}
+.footer h2{
+  font-size:36px;
+  font-weight:600;
+  margin-bottom:18px;
+}
+.footer p{
+  max-width:480px;
+  margin:0 auto;
+  text-align:left;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
+.thanks{
+  margin-top:28px;
+  font-size:26px;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+  <div class="menu-close" onclick="toggleMenu()">✕</div>
+  <a href="index.html">Beranda</a>
+  <a href="fitur.html">Fitur</a>
+  <a href="harga.html">Harga</a>
+  <a href="teknologi.html">Teknologi</a>
+  <a href="team.html">Team</a>
+  <a href="dokumentasi.html">Dokumentasi</a>
+  <a href="kontak.html">Kontak</a>
+</div>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<header>
+  <div class="logo"><span>KD</span> Kazzah Shop Digital</div>
+  <nav>
+    <div class="toggle" id="themeToggle" onclick="toggleMode()">🌙</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
+
+<div class="main">
+  <div class="icon">💬</div>
+  <h1>Hubungi Kami</h1>
+  <p>
+    Tim support Kazzah E-Shop siap melayani dan membantu anda dalam 24/7.
+    Dapatkan pelayanan yang nyaman dan ramah, kami siap membantu dan menjelaskan anda untuk menjalankan Script Bot Auto Order VIP ini.
+  </p>
+
+  <div class="cards">
+    <a class="card" href="https://wa.me/6281377190055" target="_blank">
+      <span>📱</span>
+      <h3>WhatsApp Support</h3>
+      <p>6281377190055</p>
+    </a>
+
+    <a class="card" href="https://t.me/KazzahOfficial" target="_blank">
+      <span>💬</span>
+      <h3>Telegram Support</h3>
+      <p>@KazzahOfficial</p>
+    </a>
+
+    <a class="card" href="https://chat.whatsapp.com/KhuqZfdX9nSCYHwO3Z6zQg?mode=wwt" target="_blank">
+      <span>👥</span>
+      <h3>WhatsApp Group</h3>
+      <p>Join Community</p>
+    </a>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Kazzah Shop Digital</h2>
+  <p>
+    Contact WhatsApp : 6281377190055<br>
+    Contact Telegram : @KazzahOfficial<br>
+    Location : Indonesia, Sumatera Selatan, Palembang
+  </p>
+  <div class="thanks">Thanks for all buyer</div>
+</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active')
+  document.getElementById('overlay').classList.toggle('active')
+}
+function toggleMode(){
+  document.body.classList.toggle('light')
+  const btn=document.getElementById('themeToggle')
+  btn.textContent=document.body.classList.contains('light')?'☀️':'🌙'
+}
+</script>
+
+</body>
+</html>
