@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harga – Kazzah Shop Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f14;--card:#121820;--text:#e8f0f7;--muted:#9aa4b2;--accent:#19e0d6;
+}
+.light{--bg:#f5f7fa;--card:#ffffff;--text:#111827;--muted:#6b7280;--accent:#06b6d4}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:var(--bg);color:var(--text);transition:.3s}
+
+header{padding:18px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;background:rgba(0,0,0,.35);backdrop-filter:blur(12px)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:500}
+.logo span{background:var(--accent);color:#000;border-radius:8px;padding:6px 10px;font-size:12px}
+nav{display:flex;gap:18px;align-items:center}
+.toggle,.menu-btn{cursor:pointer;font-size:20px}
+
+.hero{padding:100px 26px 70px;text-align:center}
+.hero h1{font-size:46px;font-weight:600;line-height:1.25}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);margin:22px auto 0;max-width:600px;font-size:16px}
+
+section{padding:80px 26px}
+
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;max-width:1100px;margin:auto}
+.price-card{background:var(--card);padding:32px;border-radius:22px;text-align:center;transition:.35s}
+.price-card:hover{transform:translateY(-8px);box-shadow:0 25px 45px rgba(0,0,0,.25)}
+.price-card.popular{outline:2px solid var(--accent)}
+.price-title{font-size:20px;font-weight:600;margin-bottom:10px}
+.price{font-size:36px;font-weight:600;margin:16px 0}
+.price span{font-size:14px;color:var(--muted)}
+.features{margin-top:18px;text-align:left;color:var(--muted);font-size:14.5px;line-height:1.8}
+.features div{margin-bottom:8px}
+.buy-btn{margin-top:26px;display:inline-block;padding:12px 26px;border-radius:14px;background:var(--accent);color:#000;font-weight:500;text-decoration:none}
+
+.fade{opacity:0;transform:translateY(40px);transition:.7s}
+.fade.show{opacity:1;transform:none}
+
+.menu{position:fixed;inset:0 0 0 auto;width:75%;max-width:320px;height:100vh;background:linear-gradient(180deg,#0b0f14,#020409);padding:80px 26px;z-index:30;transform:translateX(100%);transition:.35s}
+.menu.active{transform:translateX(0)}
+.menu a{display:block;color:#cfd8e3;font-size:19px;margin-bottom:22px;text-decoration:none}
+.menu a:hover{color:var(--accent)}
+.menu-close{position:absolute;top:22px;right:22px;font-size:22px;cursor:pointer}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:25;opacity:0;pointer-events:none;transition:.3s}
+.overlay.active{opacity:1;pointer-events:auto}
+
+.footer{padding:90px 26px 70px}
+.footer h2{font-size:42px;font-weight:600;margin-bottom:28px}
+.footer span{color:var(--accent)}
+.footer-info{color:var(--muted);font-size:16px;line-height:1.8;max-width:520px}
+</style>
+</head>
+<body>
+
+<div class="menu" id="menu">
+  <div class="menu-close" onclick="toggleMenu()">✕</div>
+  <a href="index.html">Beranda</a>
+  <a href="fitur.html">Fitur</a>
+  <a href="harga.html">Harga</a>
+  <a href="teknologi.html">Teknologi</a>
+  <a href="team.html">Team</a>
+  <a href="dokumentasi.html">Dokumentasi</a>
+  <a href="kontak.html">Kontak</a>
+</div>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<header>
+  <div class="logo"><span>KD</span> Kazzah E-Shop Digital</div>
+  <nav>
+    <div class="toggle" id="themeToggle" onclick="toggleMode()">🌙</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
+
+<div class="hero fade">
+  <h1>Price Resmi <span>Kazzah E-Shop Digital</span></h1>
+  <p>Script bot auto order VIP, dengan harga resmi yang tertera di bawah ini. Produk tersedia dan siap di gunakan untuk transformasi bisnis online anda.</p>
+</div>
+
+<section>
+  <div class="pricing fade">
+    <div class="price-card popular">
+      <div class="price-title">Script Auto Order Via WhatsApp<br>No Encrypt</div>
+      <div class="price">Rp 150.000</div>
+      <div class="features">
+        <div>✔ Source code <b>tidak di-enc</b> (mudah diedit)</div>
+        <div>✔ Auto order WhatsApp</div>
+        <div>✔ Support PPOB</div>
+        <div>✔ Cocok untuk bisnis jangka panjang</div>
+        <div>✔ Free panduan pemasangan</div>
+      </div>
+      <a href="https://wa.me/6281377190055?text=Halo%20Kazzah%20Shop,%20saya%20ingin%20order%20Script%20Auto%20Order%20WhatsApp" class="buy-btn" target="_blank">Order Sekarang</a>
+    </div>
+
+    <div class="price-card">
+      <div class="price-title">Script Auto Order Via WhatsApp<br>Encrypt</div>
+      <div class="price">Rp 50.000</div>
+      <div class="features">
+        <div>✔ Script sudah <b>terenkripsi</b></div>
+        <div>✔ Auto order WhatsApp siap pakai</div>
+        <div>✔ Aman dari edit sembarangan</div>
+        <div>✔ Cocok untuk pemakaian pribadi</div>
+        <div>✔ Install cepat & ringan</div>
+      </div>
+      <a href="https://wa.me/6281377190055?text=Halo%20Kazzah%20Shop,%20saya%20ingin%20order%20Script%20Auto%20Order%20WhatsApp" class="buy-btn" target="_blank">Order Sekarang</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="footer fade">
+  <h2>Kazzah <span>Shop Digital</span></h2>
+  <div class="footer-info">
+    <div>Contact WhatsApp : <b>6281377190055</b></div>
+    <div>Contact Telegram : <b>@KazzahOfficial</b></div>
+    <div>Location : <b>Indonesia, Sumatera Selatan, Palembang</b></div>
+  </div>
+</section>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle('light')
+  themeToggle.textContent=document.body.classList.contains('light')?'☀️':'🌙'
+}
+function toggleMenu(){
+  menu.classList.toggle('active')
+  overlay.classList.toggle('active')
+}
+const obs=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting)x.target.classList.add('show')
+    else x.target.classList.remove('show')
+  })
+},{threshold:.15})
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el))
+</script>
+</body>
+</html>
